@@ -3,7 +3,7 @@ import type { ThinkingLevel } from "@mariozechner/pi-agent-core";
 import type { ExtensionAPI, ExtensionContext } from "@mariozechner/pi-coding-agent";
 import type { AutocompleteItem } from "@mariozechner/pi-tui";
 
-const EFFORT_LEVELS: ThinkingLevel[] = ["off", "minimal", "low", "medium", "high", "xhigh"];
+const EFFORT_LEVELS: ThinkingLevel[] = ["off", "minimal", "low", "medium", "high", "xhigh", "max"];
 
 function updateStatus(ctx: ExtensionContext, level: ThinkingLevel): void {
 	if (!ctx.hasUI) return;
