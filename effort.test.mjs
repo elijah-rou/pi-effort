@@ -31,3 +31,13 @@ test('unsupported or unknown effort never changes the active level', async () =>
   assert.equal(f.notices[0][1], 'error');
  }
 });
+
+test('Pi loads the package manifest and registers the effort command', async () => {
+ const { loadExtensions } = await import('./node_modules/@earendil-works/pi-coding-agent/dist/core/extensions/loader.js');
+ const manifest = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'));
+ const paths = manifest.pi.extensions.map(path => new URL(path, import.meta.url).pathname);
+ const result = await loadExtensions(paths, process.cwd());
+ assert.deepEqual(result.errors, []);
+ assert.equal(result.extensions.length, 1);
+ assert.ok(result.extensions[0].commands.has('effort'));
+});

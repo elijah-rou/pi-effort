@@ -12,12 +12,13 @@ The extension:
 
 ## Install
 
-Link the extension into Pi's global extension directory:
+Install with Pi 0.84.4 or later:
 
 ```sh
-mkdir -p ~/.pi/agent/extensions
-ln -sfn "$HOME/Projects/pi-effort/effort.ts" ~/.pi/agent/extensions/effort.ts
+pi install git:github.com/elijah-rou/pi-effort
 ```
+
+If upgrading from the old symlink setup, remove `~/.pi/agent/extensions/effort.ts` after installation succeeds. Keep your development checkout.
 
 Run `/reload` in an existing Pi session, or start a new session.
 
@@ -33,4 +34,4 @@ Run `/reload` in an existing Pi session, or start a new session.
 /effort xhigh
 ```
 
-Changes apply to the current session and do not overwrite Pi's default thinking level.
+Changes use Pi's standard thinking-level API, which also updates its saved default.

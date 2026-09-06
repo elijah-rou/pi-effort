@@ -1,7 +1,7 @@
-import { getSupportedThinkingLevels } from "@mariozechner/pi-ai";
-import type { ThinkingLevel } from "@mariozechner/pi-agent-core";
-import type { ExtensionAPI, ExtensionContext } from "@mariozechner/pi-coding-agent";
-import type { AutocompleteItem } from "@mariozechner/pi-tui";
+import { getSupportedThinkingLevels } from "@earendil-works/pi-ai";
+import type { ThinkingLevel } from "@earendil-works/pi-agent-core";
+import type { ExtensionAPI, ExtensionContext } from "@earendil-works/pi-coding-agent";
+import type { AutocompleteItem } from "@earendil-works/pi-tui";
 
 const EFFORT_LEVELS: ThinkingLevel[] = ["off", "minimal", "low", "medium", "high", "xhigh", "max"];
 
@@ -63,7 +63,7 @@ export default function effortExtension(pi: ExtensionAPI) {
 				if (!selected) return;
 			}
 
-			pi.setThinkingLevel(selected, { persist: false });
+			pi.setThinkingLevel(selected);
 			const effective = pi.getThinkingLevel();
 			updateStatus(ctx, effective);
 			ctx.ui.notify(`Effort: ${effective}`, "info");

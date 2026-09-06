@@ -1,0 +1,40 @@
+{
+  "name": "pi-effort",
+  "version": "0.1.0",
+  "description": "Pi reasoning effort status and session effort command",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elijah-rou/pi-effort.git"
+  },
+  "keywords": [
+    "pi-package"
+  ],
+  "files": [
+    "effort.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test effort.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run test && npm run typecheck"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "0.84.4",
+    "@earendil-works/pi-agent-core": "0.84.4",
+    "@earendil-works/pi-coding-agent": "0.84.4",
+    "@earendil-works/pi-tui": "0.84.4",
+    "@types/node": "24.0.0",
+    "typescript": "5.9.3"
+  },
+  "pi": {
+    "extensions": [
+      "./effort.ts"
+    ]
+  }
+}
