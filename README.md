@@ -34,4 +34,4 @@ Run `/reload` in an existing Pi session, or start a new session.
 /effort xhigh
 ```
 
-Changes use Pi's standard thinking-level API, which also updates its saved default.
+Changes apply to the current session and do not overwrite Pi's default thinking level.
